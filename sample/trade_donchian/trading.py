@@ -46,22 +46,22 @@ class trading:
         '''
         #order订单对象
         order:
-        "exchange":"bitfinex", #交易所
-        "symbol":"BTC/USDT", #币种
-        "side":"buy", #方向：做多buy或做空sell
-        "order_id":"xxxxxxxxxxxxx", #订单编号
-        "entry_price":50000.0, #平均成交价格
-        "best_price":50010.0, #盈利最大价格
-        "stop_price":49010.0, #止损价格(对于动态止损策略，stop_price会根据best_price动态变化)
-        "current_price: 50008.0 #当前价格
-        "total_amount":"0.1", #数量
-        "executed_amount":"0.04", #已执行数量
-        "unexecuted_amount":"0.06", #未执行数量
-        "status":1, #0未执行;1部分执行;2全部执行
-        "timestamp":1650176916.000, #订单创建时间（秒）
-        "fees":2.0, #已产生的手续费（美元）
-        "ATR": 2500.0, #ATR
-        "ATRP": 5.0 #ATR%
+        exchange:"bitfinex", #交易所
+        symbol:"BTC/USDT", #币种
+        side:"buy", #方向：做多buy或做空sell
+        order_id:"xxxxxxxxxxxxx", #订单编号
+        entry_price:50000.0, #平均成交价格
+        best_price:50010.0, #盈利最大价格
+        stop_price:49010.0, #止损价格(对于动态止损策略，stop_price会根据best_price动态变化)
+        current_price: 50008.0 #当前价格
+        total_amount:"0.1", #数量
+        executed_amount:"0.04", #已执行数量
+        unexecuted_amount:"0.06", #未执行数量
+        status:1, #0未执行;1部分执行;2全部执行
+        timestamp:1650176916.000, #订单创建时间（秒）
+        fees":2.0, #已产生的手续费（美元）
+        ATR: 2500.0, #ATR
+        ATRP: 5.0 #ATR%
         '''
         exit_sign = 0  #退出信号强度（介于[0,1]之间）
         etype = 0 #退出类型：0信号退出 1止损退出
