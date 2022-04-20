@@ -15,9 +15,10 @@ class trading:
       ATRP20D: 20日ATR波动百分比
       '''
       e,s = exchange,symbol
+      risk = 1.0
       if TOTAL_POS > 0:
         return None
-      pos = MARGIN * RISK / ATRP20D(e,s)
+      pos = MARGIN * risk / ATRP20D(e,s)
       if DON20D_BREAK(e,s) == 1 and MA25D(e,s) > MA350D(e,s):
         strategy = {
         "sign":1.0, #信号强度
@@ -35,7 +36,7 @@ class trading:
       #strategy策略对象
       return strategy
         
-    def exit_signal(order:"order") -> tuple:
+    def exit_signal(ORDER:"order") -> tuple:
         '''
         #order订单对象
         order = {
@@ -59,15 +60,16 @@ class trading:
         '''
         exit_sign = 0  #退出信号强度（介于[0,1]之间）
         etype = 0 #退出类型：0信号退出 1止损退出
-        if order.side == 'buy':
-          if order.current_price < order.entry_price - order.ATR * 2:
+        e,s = ORDER.exchange,ORDER.symbol
+        if ORDER.side == 'buy':
+          if ORDER.current_price < ORDER.entry_price - ORDER.ATR * 2:
             exit_sign = 1
             etype = 1
           elif DON10D_BREAK(e,s) == -1:
             exit_sign = 1
             etype = 0
-        elif order.side == 'sell':
-          if order.current_price > order.entry_price + order.ATR * 2:
+        elif ORDER.side == 'sell':
+          if ORDER.current_price > ORDER.entry_price + ORDER.ATR * 2:
             exit_sign = 1
             etype = 1
           elif DON10D_BREAK(e,s) == 1:
