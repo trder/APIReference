@@ -1,4 +1,7 @@
 class trading:
+    '''
+    唐奇安趋势系统
+    '''
     def entry_signal(exchange:string,symbol:string) -> dict:
       '''
       解释：
