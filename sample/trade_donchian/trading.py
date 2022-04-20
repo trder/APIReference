@@ -45,7 +45,7 @@ class trading:
     def exit_signal(ORDER:"order") -> tuple:
         '''
         #order订单对象
-        order = {
+        order:
         "exchange":"bitfinex", #交易所
         "symbol":"BTC/USDT", #币种
         "side":"buy", #方向：做多buy或做空sell
@@ -62,7 +62,6 @@ class trading:
         "fees":2.0, #已产生的手续费（美元）
         "ATR": 2500.0, #ATR
         "ATRP": 5.0 #ATR%
-        }
         '''
         exit_sign = 0  #退出信号强度（介于[0,1]之间）
         etype = 0 #退出类型：0信号退出 1止损退出
