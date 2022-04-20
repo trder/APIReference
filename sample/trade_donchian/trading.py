@@ -10,6 +10,12 @@ class trading:
     '''
     def entry_signal(exchange:string,symbol:string) -> dict:
       '''
+      入场信号
+      输入：
+      exchange:交易所
+      symbol:符号
+      返回：
+      strategy策略对象（字典）
       解释：
       PRICE_USD：当前价格(USD)
       MA350D：350日均线
@@ -44,8 +50,10 @@ class trading:
         
     def exit_signal(ORDER:"order") -> tuple:
         '''
-        #order订单对象
-        order:
+        退出信号
+        输入：
+        ORDER订单对象
+        ORDER订单对象中的属性：
         exchange:"bitfinex", #交易所
         symbol:"BTC/USDT", #币种
         side:"buy", #方向：做多buy或做空sell
@@ -62,6 +70,9 @@ class trading:
         fees":2.0, #已产生的手续费（美元）
         ATR: 2500.0, #ATR
         ATRP: 5.0 #ATR%
+        返回：
+        退出信号强度（介于[0,1]之间）
+        退出类型：0信号退出 1止损退出
         '''
         exit_sign = 0  #退出信号强度（介于[0,1]之间）
         etype = 0 #退出类型：0信号退出 1止损退出
