@@ -1,3 +1,5 @@
+from trder import *
+
 class trading:
     '''
     唐奇安趋势系统
