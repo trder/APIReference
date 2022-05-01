@@ -2,12 +2,7 @@
 #输入指令：python eval.py donchian
 #启动模拟交易
 import sys
-
-def load_trading_system():
-    '''
-    载入交易系统
-    '''
-    pass
+from trder import *
 
 if __name__ == '__main__':
     #获取参数个数
