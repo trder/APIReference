@@ -1,2 +1,11 @@
-# APIReference
-Trder API Reference
+# 开源量化交易平台
+## API参考手册
+
+开源量化交易平台。
+
+一个创建、测试、运行量化交易系统并且能够训练量化AI的集成开发平台。
+
+项目地址：https://github.com/trder/
+
+by AI纪元
+2022-05-01
